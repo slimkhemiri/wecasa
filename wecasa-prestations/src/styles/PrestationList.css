@@ -1,0 +1,55 @@
+.category-container {
+    margin-bottom: 30px;
+  }
+  
+  .category-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .prestations-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .prestation-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .prestation-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .prestation-duration {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .prestation-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .prestation-price {
+    font-weight: bold;
+  }
+  
+  .add-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

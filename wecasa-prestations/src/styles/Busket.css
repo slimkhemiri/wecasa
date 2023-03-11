@@ -1,0 +1,82 @@
+.basket-container {
+    margin: 20px;
+  }
+  
+  .basket-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .basket-items {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+    background-color:#dfebe2;
+    border:1px solid #ab9697;
+    border-radius: 3px;
+  }
+  
+  .basket-empty {
+    font-size: 18px;
+    text-align: center;
+    margin: 40px;
+    
+  }
+  
+  .basket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .basket-item-title {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .basket-item-price,
+  .basket-item-duration {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .basket-item-remove {
+    background-color: #f52731;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .basket-summary {
+    margin-top: 20px;
+  }
+  
+  .basket-summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .basket-summary-label {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .basket-summary-value {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .basket-clear-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
