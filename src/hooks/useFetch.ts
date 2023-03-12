@@ -1,6 +1,6 @@
 import { Category } from '../redux/types/prestation';
 import { useQuery } from 'react-query';
-const API = "https://www.wecasa.fr/api/techtest";
+const API = import.meta.env.VITE_WECASA_URL ;
 
 interface PrestationsResponse {
   categories: Category[];
