@@ -1,14 +1,14 @@
-import { useGetPrestationsQuery } from '../hooks/useFetch';
+import { useMemo } from 'react';
+import { useGetPrestationsQuery } from '../../hooks/useFetch';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectBasket, selectTotalPrice, selectTotalDuration, clearBasket } from '../redux/features/prestationsSlice';
-import { addPrestation, removePrestation } from '../redux/features/prestationsSlice';
-import PrestationList from '../components/PrestationList';
-import Basket from '../components/Basket';
+import { selectBasket, selectTotalPrice, selectTotalDuration, clearBasket } from '../../redux/features/prestationsSlice';
+import { addPrestation, removePrestation } from '../../redux/features/prestationsSlice';
+import PrestationList from '../../components/PrestationList/PrestationList';
+import Basket from '../../components/Basket/Basket';
 
 const Prestations = () => {
   const dispatch = useDispatch();
   const { data: prestations, isLoading, isError } = useGetPrestationsQuery();
-
   const basket = useSelector(selectBasket);
   const totalPrice = useSelector(selectTotalPrice);
   const totalDuration = useSelector(selectTotalDuration);
@@ -33,11 +33,13 @@ const Prestations = () => {
     return <h2>Error fetching prestations data</h2>;
   }
 
+  const categories = useMemo(() => prestations?.categories, [prestations]);
+
   return (
     <>
       <h1>Wecasa Prestations</h1>
       <div>
-        <PrestationList prestations={prestations?.categories} onAddPrestation={handleAddPrestation} />
+        <PrestationList prestations={categories} onAddPrestation={handleAddPrestation} />
         <Basket
           basket={basket}
           totalPrice={totalPrice}

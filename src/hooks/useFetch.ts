@@ -1,6 +1,6 @@
 import { Category } from '../redux/types/prestation';
 import { useQuery } from 'react-query';
-const API =import.meta.env.VITE_WECASA_URL ;
+const API = "https://www.wecasa.fr/api/techtest";
 
 interface PrestationsResponse {
   categories: Category[];
@@ -15,6 +15,6 @@ export const useGetPrestationsQuery = () => {
     const data: PrestationsResponse = await response.json();
     return data;
   }, {
-    cacheTime: 60 * 60 * 1000 //cache data for 1 hour before it is refetched from the server again.
+    cacheTime: 60 * 60 * 1000 //cache data for 1 hour 
   });
 };

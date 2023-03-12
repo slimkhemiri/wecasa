@@ -1,6 +1,6 @@
-import React from 'react';
-import { Prestation } from '../redux/types/prestation';
-import '../styles/Busket.css';
+import React, { useMemo } from 'react';
+import { Prestation } from '../../redux/types/prestation';
+import '../../styles/Busket.css';
 interface BasketProps {
   basket: Prestation[];
   totalPrice: number;
@@ -10,7 +10,7 @@ interface BasketProps {
 }
 
 const Basket: React.FC<BasketProps> = ({ basket, totalPrice, totalDuration, onRemovePrestation, onClearBasket }) => {
-  
+
   return (
     <div className="basket-container">
       <h2 className="basket-title">Panier</h2>
