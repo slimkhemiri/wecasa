@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useGetPrestationsQuery } from '../../hooks/useFetch';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectBasket, selectTotalPrice, selectTotalDuration, clearBasket } from '../../redux/features/prestationsSlice';
@@ -33,13 +32,12 @@ const Prestations = () => {
     return <h2>Error fetching prestations data</h2>;
   }
 
-  const categories = useMemo(() => prestations?.categories, [prestations]);
-
+  
   return (
     <>
       <h1>Wecasa Prestations</h1>
       <div>
-        <PrestationList prestations={categories} onAddPrestation={handleAddPrestation} />
+        <PrestationList prestations={prestations?.categories} onAddPrestation={handleAddPrestation} />
         <Basket
           basket={basket}
           totalPrice={totalPrice}

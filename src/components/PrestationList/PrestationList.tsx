@@ -1,8 +1,6 @@
 import { Category, Prestation } from '../../redux/types/prestation';
-import PrestationItem from '../PrestationItem/PrestationItem';
 import '../../styles/PrestationList.css';
-import { useMemo } from 'react';
-
+import PrestationItem from '../PrestationItem/PrestationItem';
 interface PrestationListProps {
   prestations: Category[] | undefined;
   onAddPrestation: (prestation: Prestation) => void;
@@ -13,15 +11,13 @@ const PrestationList: React.FC<PrestationListProps> = ({ prestations, onAddPrest
     onAddPrestation(prestation);
   };
 
-  const categories = useMemo(() => {
-    return prestations?.map((category) => (
-      <PrestationItem category={category} onAddPrestation={handleAddPrestation} /> 
-    ));
-  }, [prestations, handleAddPrestation]);
-  
   return (
     <>
-      {categories}
+      {prestations?.map((category) => (
+       <div key={category.reference}>
+       <PrestationItem category={category} onAddPrestation={handleAddPrestation} /> 
+       </div>
+      ))}
     </>
   );
 };
